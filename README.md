@@ -1,6 +1,6 @@
 # OmniAuth Mail.ru
 
-This gem contains the unofficial Mail.ru OAuth2 strategy for OmniAuth.
+This gem contains the unofficial Mail.ru OAuth2 strategy for [OmniAuth](http://github.com/intridea/omniauth).
 
 [![Build Status](https://secure.travis-ci.org/gumayunov/omniauth-mailru.png)](http://travis-ci.org/gumayunov/omniauth-mailru)
 
@@ -9,6 +9,10 @@ This gem contains the unofficial Mail.ru OAuth2 strategy for OmniAuth.
     use OmniAuth::Builder do
       provider :mailru, ENV['MAILRU_KEY'], ENV['MAILRU_PRIVATE_KEY']
     end
+
+## Links
+
+* http://api.mail.ru/docs/guides/oauth/
 
 ## License
 
