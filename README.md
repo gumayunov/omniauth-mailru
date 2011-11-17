@@ -10,6 +10,16 @@ This gem contains the unofficial Mail.ru OAuth2 strategy for [OmniAuth](http://g
       provider :mailru, ENV['MAILRU_KEY'], ENV['MAILRU_PRIVATE_KEY']
     end
 
+Callback url can be passed in order to match specified one on Mail.ru side in application preferences.
+
+    use OmniAuth::Builder do
+      provider :mailru, ENV['MAILRU_KEY'], ENV['MAILRU_PRIVATE_KEY'], {
+        :authorize_options => {
+          :callback_url => ENV['MAILRU_CALLBACK_URL']
+        }
+      }
+    end
+
 ## Links
 
 * http://api.mail.ru/docs/guides/oauth/

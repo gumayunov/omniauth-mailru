@@ -35,6 +35,10 @@ module OmniAuth
         {:raw_info => raw_info}
       end
 
+      def callback_url
+        options.authorize_options.callback_url || super
+      end
+
       private
 
       def raw_info

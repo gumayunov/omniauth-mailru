@@ -33,7 +33,12 @@ end
 use Rack::Session::Cookie
 
 use OmniAuth::Builder do
-  provider :mailru, ENV['MAILRU_KEY'], ENV['MAILRU_PRIVATE']
+  provider :mailru, ENV['MAILRU_KEY'], ENV['MAILRU_PRIVATE_KEY'], {
+    :authorize_options => {
+      # optional
+      :callback_url => ENV['MAILRU_CALLBACK_URL']
+    }
+  }
 end
 
 run App.new
