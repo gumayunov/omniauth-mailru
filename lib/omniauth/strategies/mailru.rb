@@ -27,7 +27,10 @@ module OmniAuth
           :first_name => raw_info['first_name'],
           :last_name => raw_info['last_name'],
           :image => (raw_info['has_pic'].to_s != "0") && raw_info['pic_big'] || nil,
-          :location => (raw_info['location'] || {})['name']
+          :location => (raw_info['location'] || {})['name'],
+          :urls => {
+            'Mailru' => raw_info['link']
+          }
         }
       end
 
