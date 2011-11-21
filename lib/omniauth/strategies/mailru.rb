@@ -23,7 +23,7 @@ module OmniAuth
         {
           :nickname => raw_info['nick'],
           :email => raw_info['email'],
-          :name => raw_info['name'],
+          :name => [raw_info['first_name'], raw_info['last_name']].join(' '),
           :first_name => raw_info['first_name'],
           :last_name => raw_info['last_name'],
           :image => (raw_info['has_pic'].to_s != "0") && raw_info['pic_big'] || nil,
@@ -62,7 +62,7 @@ module OmniAuth
         raw = hash.map{|key, value| [key, value].join('=')}.sort.join
         raw = [uid, raw, options.client_secret].join
         Digest::MD5.hexdigest(raw)
-      end                                                            
+      end
 
     end
 
