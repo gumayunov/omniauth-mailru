@@ -15,6 +15,8 @@ module OmniAuth
         :authorize_url => '/oauth/authorize'
       }
 
+      option :callback_url
+
       uid do
         access_token.params['x_mailru_vid']
       end
@@ -39,11 +41,7 @@ module OmniAuth
       end
 
       def callback_url
-        if options.authorize_options.respond_to? :callback_url
-          options.authorize_options.callback_url
-        else
-          super
-        end
+        options.callback_url || super
       end
 
       private
