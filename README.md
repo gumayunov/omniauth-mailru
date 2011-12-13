@@ -14,9 +14,7 @@ Callback url can be passed in order to match specified one on Mail.ru side in ap
 
     use OmniAuth::Builder do
       provider :mailru, ENV['MAILRU_KEY'], ENV['MAILRU_PRIVATE_KEY'], {
-        :authorize_options => {
-          :callback_url => ENV['MAILRU_CALLBACK_URL']
-        }
+        :callback_url => ENV['MAILRU_CALLBACK_URL']
       }
     end
 
